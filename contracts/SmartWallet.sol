@@ -53,7 +53,7 @@ contract SmartWallet {
         }
     }
 
-    function denyAccess(address payable _addr) public payable  onlyOwner {
+    function denyAccess(address payable _addr) public payable onlyOwner {
         allowedAddress[getIndex(_addr)].access = false;
         uint index = getIndex(_addr);
         Guardian memory temp = allowedAddress[(allowedAddress.length - 1)];
@@ -103,7 +103,6 @@ contract SmartWallet {
         emit OwnerChange(owner, _owner);
         owner = _owner;
     }
-    receive() external payable{
 
-    }
+    receive() external payable {}
 }
